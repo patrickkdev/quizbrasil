@@ -1,0 +1,31 @@
+.divMain {
+	background-color: #00567b;
+	position: relative;
+	box-shadow: 0px 0px 7px black;
+}
+
+.divBottom {
+	padding: 20px 0px;
+	background-color: white;
+}
+
+.divBottomContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.containerActions {
+	display: flex;
+	justify-content: space-between;
+}
+
+.divMdUp {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.containerImg {
+	height: 200;
+	width: 100;
+}
