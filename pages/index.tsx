@@ -16,6 +16,8 @@ export default function Home() {
 	const [answerStatus, setAnswerStatus] = useState<AnswerStatus>('PENDING');
 	const [chosenAnswer, setChosenAnswer] = useState<string>('');
 
+	const [possibleAnswers, setPossibleAnswers] = useState<string[]>([]);
+
 	const handleConfirm = () => {
 		if (chosenAnswer == '') return;
 
@@ -46,6 +48,7 @@ export default function Home() {
 		} else {
 			getNewQuestion();
 		}
+		setPossibleAnswers([newQuestion?.correctAnswer, ...newQuestion?.wrongAnswers].sort(() => Math.random() - 0.5));
 		setChosenAnswer('');
 		setAnswerStatus('PENDING');
 	};
@@ -57,8 +60,6 @@ export default function Home() {
 	if (typeof question == 'undefined') {
 		return <h1>Carregando</h1>;
 	}
-
-	let possibleAnswers = [question?.correctAnswer, ...question?.wrongAnswers];
 
 	return (
 		<>
